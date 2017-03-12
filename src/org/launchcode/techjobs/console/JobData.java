@@ -78,7 +78,7 @@ JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -139,16 +139,16 @@ JobData {
             for (String key : row.keySet()) {
                 String aValue = row.get(key);
 
-//            for (Integer v = 0; v < row.size(); v++) {
-//                if (row.get(row.getKey(v)).contains("value")) {
-//                    if (row.containsValue(value)) {
-//                if (row.containsValue(value))
+                if (aValue.toLowerCase().contains(value.toLowerCase())) {
                     jobs.add(row);
-
+                }
                 }
         }
 
         
         return jobs;
+    }
+    public static String makeLower(String aValue) {
+        return aValue.toLowerCase();
     }
     }

@@ -127,6 +127,8 @@ JobData {
         }
     }
 
+    //try something from this http://stackoverflow.com/questions/1383797/java-hashmap-how-to-get-key-from-value
+
     public static ArrayList<HashMap<String, String>> findByValue(String column, String value) {
         // load data, if not already loaded
         loadData();
@@ -134,13 +136,19 @@ JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
+            for (String key : row.keySet()) {
+                String aValue = row.get(key);
 
+//            for (Integer v = 0; v < row.size(); v++) {
+//                if (row.get(row.getKey(v)).contains("value")) {
+//                    if (row.containsValue(value)) {
+//                if (row.containsValue(value))
+                    jobs.add(row);
 
-            if (row.containsValue(value)) {
-                jobs.add(row);
-            }
+                }
         }
 
+        
         return jobs;
     }
     }
